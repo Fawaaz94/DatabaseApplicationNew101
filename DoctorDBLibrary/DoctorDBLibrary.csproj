@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3897AD81-AB07-47B0-B6E4-5EBD0F41ACE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DoctorDBLibrary</RootNamespace>
+    <AssemblyName>DoctorDBLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\CheckQueries.cs" />
+    <Compile Include="DataAccess\DataSetPatient.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPatient.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DataSetRecords.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRecords.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DeleteQueries.cs" />
+    <Compile Include="DataAccess\EditQueries.cs" />
+    <Compile Include="DataAccess\GetQueries.cs" />
+    <Compile Include="DataAccess\InsertQueries.cs" />
+    <Compile Include="GlobalConfig.cs" />
+    <Compile Include="Logic\Events\CheckEvents.cs" />
+    <Compile Include="Logic\Events\ClearEvents.cs" />
+    <Compile Include="Logic\Events\ClickEvents.cs" />
+    <Compile Include="Logic\Events\FocusEvents.cs" />
+    <Compile Include="Logic\Events\LoadEvents.cs" />
+    <Compile Include="Logic\Interfaces\Forms\IDashboard.cs" />
+    <Compile Include="Logic\Interfaces\Forms\ILogin.cs" />
+    <Compile Include="Logic\Logs\ErrorLogs.cs" />
+    <Compile Include="Logic\Threads\DataThreads.cs" />
+    <Compile Include="Models\LogicModel.cs" />
+    <Compile Include="Models\PatientModel.cs" />
+    <Compile Include="Models\RecordsModel.cs" />
+    <Compile Include="PDF_Creator\createPDF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccess\DataSetPatient.xsc">
+      <DependentUpon>DataSetPatient.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccess\DataSetPatient.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPatient.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccess\DataSetPatient.xss">
+      <DependentUpon>DataSetPatient.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccess\DataSetRecords.xsc">
+      <DependentUpon>DataSetRecords.xsd</DependentUpon>
+    </None>
+    <None Include="DataAccess\DataSetRecords.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRecords.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccess\DataSetRecords.xss">
+      <DependentUpon>DataSetRecords.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

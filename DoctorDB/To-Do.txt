@@ -1,0 +1,18 @@
+﻿To do:
+
+1. Make the names unique in the listbox
+2. Make the design look better in listbox
+3. Add the Records Table
+4. Add mandatory checkings
+5. Appointment Form should be added to users profile so that when you select the patient you will see the appointments attached to it 
+6. Fix the way appointments is diplayed - Figure out a way to display Records properly in the ListBox? is this the best way?
+7. Create links between patients on the same medical aid scheme
+8. 
+
+Settings:
+
+1. Manage user - Add user, change password
+2. Change UI Colour?
+3. Delete Patients?
+4. Checked linked members?
+5. 
